@@ -10,13 +10,12 @@ import java.util.Objects;
 @Getter
 @ToString
 @Table(indexes = {
-        @Index(columnList = "userId", unique = true),
         @Index(columnList = "email", unique = true),
         @Index(columnList = "createdAt"),
-        @Index(columnList = "createdBy"),
+        @Index(columnList = "createdBy")
 })
 @Entity
-public class UserAccount extends AuditingFields{
+public class UserAccount extends AuditingFields {
     @Id
     @Column(length = 50)
     private String userId;
@@ -28,13 +27,13 @@ public class UserAccount extends AuditingFields{
     @Setter private String memo;
 
 
-    protected UserAccount(){}
+    protected UserAccount() {}
 
-    private UserAccount(String userId, String userPassword, String email, String nickname, String memo){
+    private UserAccount(String userId, String userPassword, String email, String nickname, String memo) {
         this.userId = userId;
         this.userPassword = userPassword;
         this.email = email;
-        this.nickname =nickname;
+        this.nickname = nickname;
         this.memo = memo;
     }
 
@@ -45,9 +44,8 @@ public class UserAccount extends AuditingFields{
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        UserAccount that = (UserAccount) o;
-        return Objects.equals(userId, that.userId);
+        if (!(o instanceof UserAccount userAccount)) return false;
+        return userId != null && userId.equals(userAccount.userId);
     }
 
     @Override
