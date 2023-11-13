@@ -1,6 +1,5 @@
 package com.boardProject.controller;
 
-import com.boardProject.dto.UserAccountDto;
 import com.boardProject.dto.request.ArticleCommentRequest;
 import com.boardProject.dto.security.BoardPrincipal;
 import com.boardProject.service.ArticleCommentService;
