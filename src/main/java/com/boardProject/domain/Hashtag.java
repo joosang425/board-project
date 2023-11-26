@@ -42,8 +42,8 @@ public class Hashtag extends AuditingFields {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Hashtag hashtag)) return false;
-        return this.getId() != null && Objects.equals(this.getId(), hashtag.getId());
+        if (!(o instanceof Hashtag that)) return false;
+        return this.getId() != null && this.getId().equals(that.getId());
     }
 
     @Override
