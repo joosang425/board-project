@@ -301,7 +301,7 @@ class ArticleServiceTest {
         then(hashtagService).shouldHaveNoInteractions();
     }
 
-    @DisplayName("게시글의 ID를 입력하면, 게시글을 삭제한다")
+    @DisplayName("게시글의 ID를 입력하면, 게시글을 삭제한다.")
     @Test
     void givenArticleId_whenDeletingArticle_thenDeletesArticle() {
         // Given
@@ -324,7 +324,7 @@ class ArticleServiceTest {
         then(hashtagService).should(times(2)).deleteHashtagWithoutArticles(any());
     }
 
-    @DisplayName("게시글 수를 조회하면, 게시글 수를 반환한다")
+    @DisplayName("게시글 수를 조회하면, 게시글 수를 반환한다.")
     @Test
     void givenNothing_whenCountingArticles_thenReturnArticleCount() {
         // Given
